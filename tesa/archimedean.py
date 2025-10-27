@@ -23,7 +23,7 @@
 #   Retorno: {"C_infty": float, "report": dict}
 #
 # Licença:
-# - MIT (ajuste conforme a licença do repositório).
+# - MIT
 # =============================================================================
 
 from typing import Dict, Any, Optional, Sequence
