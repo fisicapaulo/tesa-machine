@@ -1,1 +1,67 @@
+# family.yaml como string Python para salvar no Colab
+# Use:
+#   path = "config/family.yaml"
+#   import os, textwrap
+#   os.makedirs("config", exist_ok=True)
+#   with open(path, "w") as f: f.write(FAMILY_YAML)
+FAMILY_YAML = """
+g1_example:
+  delta_lower_bound: 0.03
+  epsilon_params:
+    C_epsilon: 1.0
+    sup_norm_bound: 2.0
+  err_locals_sum: 0.0
+  places:
+    - place: v2
+      graph: E6          # IV* (E6)
+      p: 2
+      i0: 3
+      conductance: 1.0
+      h_sample: 3.0
+      mD_sample: 4.2
+    - place: v3
+      graph: D5          # I1* (D5)
+      p: 3
+      i0: 3
+      conductance: 1.0
+      h_sample: 3.5
+      mD_sample: 4.7
+    - place: v5
+      graph: D4          # I0* (D4)
+      p: 5               # p>=5 => K_v = 0 no placeholder
+      i0: 3
+      conductance: 1.0
+      h_sample: 4.1
+      mD_sample: 5.0
 
+gge2_example:
+  g: 2
+  delta_lower_bound: 0.08
+  epsilon_params:
+    C_epsilon: 1.5
+    sup_norm_bound: 3.0
+  err_locals_sum: 0.1
+  bundle: admissible
+  places:
+    - place: w2
+      graph: E7          # III* (E7)
+      p: 2
+      i0: 3
+      conductance: 1.0
+      h_sample: 6.0
+      mD_sample: 7.0
+    - place: w3
+      graph: E8          # II* (E8)
+      p: 3
+      i0: 3
+      conductance: 2.0
+      h_sample: 6.4
+      mD_sample: 7.6
+    - place: w5
+      graph: D6          # I2* (D6)
+      p: 5
+      i0: 3
+      conductance: 0.5
+      h_sample: 6.7
+      mD_sample: 8.0
+"""
