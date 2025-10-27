@@ -117,6 +117,78 @@ pip install numpy scipy matplotlib pyyaml
 - Conectar exemplos g=1 a curvas elípticas reais (modelo minimal, tipos de Kodaira).
 - Para g≥2, usar grafos reais de redução estável (dual graphs) e comparar com benchmarks.
 
+- Seções sugeridas para adicionar ao final do README.md:
+
+Se preferir, substitua os campos entre colchetes.
+
+— INÍCIO DO BLOCO COPIAR/ COLAR —
+
+## Limitações atuais
+
+Este repositório está em desenvolvimento ativo e contém componentes com aproximações controladas:
+
+- Módulo espectral (δ): o arquivo `tesa/spectral.py` usa um placeholder para fornecer um lower bound para δ (Axioma 2). A futura versão certificada deverá calcular lacunas espectrais com verificação (p.ex., autovalores mínimos com aritmética intervalar).
+- Componente arquimediano (C_∞): o arquivo `tesa/archimedean.py` utiliza uma aproximação para o potencial contínuo sob métrica admissível com normalização de média zero. Em versões futuras, pretendemos implementar integração numérica certificada (com controle de erro e bounds verificados).
+- Configurações de exemplo: os cenários em `config/family.yaml` são ilustrativos. Para uso em pesquisa, ajuste cuidadosamente os parâmetros (lugares, tipos, condutâncias) de acordo com o caso estudado e documente as escolhas no relatório/outputs.
+- Estabilidade numérica: rotinas de resolução linear e cálculo de energias (Fenchel, potenciais, etc.) podem ser sensíveis ao condicionamento. Recomendamos verificar tolerâncias, checar condicionamentos das matrizes envolvidas e, quando necessário, ativar logs detalhados para auditoria.
+
+## Reprodutibilidade
+
+Para reforçar a reprodutibilidade dos resultados:
+
+- Versões de dependências: utilize o `requirements.txt` fornecido. Versões mínimas sugeridas:
+  - numpy>=1.22
+  - scipy>=1.8
+  - matplotlib>=3.5
+  - pyyaml>=6.0
+  - networkx>=2.8
+- Ambiente: recomendamos Python 3.9+ e execução em ambiente virtual (venv ou conda).
+- Saídas determinísticas: scripts em `examples/` criam a pasta `outputs/` (se necessário) e gravam relatórios e gráficos. Inclua nos relatórios o commit hash do Git, timestamp e versões de bibliotecas (ver seção “Certificados e auditoria”).
+- Versionamento: use tags (por exemplo, `v0.1.0`) para fixar o estado do código citado em artigos.
+
+## Certificados e auditoria
+
+Os relatórios gerados (por exemplo, `*_global_certificates.txt`) devem registrar:
+
+- Carimbo de data/hora da execução
+- Commit hash do repositório (se disponível)
+- Versões de Python e bibliotecas (numpy, scipy, matplotlib, pyyaml, networkx)
+- Cenário e parâmetros efetivos (oriundos de `config/family.yaml`)
+- Resumo das constantes: δ, soma de C_Type,v, C_∞, C_Global
+- Verificações/checs básicos (ex.: não negatividade, coerência de limites inferiores/superiores)
+
+Isso facilita a validação independente e a citação reprodutível.
+
+## Como citar
+
+Se este repositório for útil em sua pesquisa, por favor cite:
+
+- Citação em texto: “Máquina TESA (tesa-machine), versão [vX.Y.Z], [autor/es], [ano].”
+- BibTeX (exemplo):
+
+@software{tesa_machine_[ANO],
+  author  = {Paulo Vieira},
+  title   = {TESA-MACHINE — Máquina da Identidade Global TESA},
+  year    = {2025},
+  version = {v0.1.0},
+  url     = {https://github.com/fisicapaulo/tesa-machine},
+  license = {MIT}
+}
+
+## Roadmap (curto prazo)
+
+- Substituir o placeholder espectral por rotina certificada de lacuna espectral (com aritmética intervalar e certificados numéricos).
+- Implementar cálculo arquimediano C_∞ com integração verificada e controle de erro.
+- Ampliar casos de teste (g=1 e g≥2) com exemplos reais, incluindo comparações com literatura.
+- Adicionar testes automatizados (pytest) e CI (GitHub Actions) para validar exemplos.
+- Enriquecer os relatórios com métricas de condicionamento e tolerâncias usadas nos solvers.
+
+## Suporte e contribuições
+
+- Issues: use a aba “Issues” do GitHub para reportar bugs, propor melhorias ou discutir casos específicos.
+- Pull requests: contribuições são bem-vindas. Por favor, inclua testes e atualize a documentação quando necessário.
+- Licença: este projeto é distribuído sob a licença MIT (ver arquivo LICENSE).
+
 ## Suporte e licença
 - Use Issues e Pull Requests para discutir melhorias e reportar problemas.
 - Licença: MIT
