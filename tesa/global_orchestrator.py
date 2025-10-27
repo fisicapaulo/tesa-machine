@@ -16,7 +16,7 @@
 # - delta_computer e arch_computer: funções externas conforme APIs combinadas.
 #
 # Licença:
-# - MIT (ajuste conforme necessário).
+# - MIT
 # =============================================================================
 
 from typing import List, Dict, Any
