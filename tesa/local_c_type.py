@@ -1,5 +1,3 @@
-Perfeito. Segue um cabeçalho de comentários claro e direto para você colar no topo do arquivo tesa/local_c_type.py, acima dos imports:
-
 # =============================================================================
 # tesa.local_c_type
 #
@@ -37,7 +35,7 @@ Perfeito. Segue um cabeçalho de comentários claro e direto para você colar no
 #   para uma demonstração rápida e geração de figuras.
 #
 # Licença:
-# - MIT (ou ajuste conforme a licença do repositório).
+# - MIT 
 # =============================================================================
 import math
 import csv
