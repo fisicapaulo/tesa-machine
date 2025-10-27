@@ -119,7 +119,7 @@ pip install numpy scipy matplotlib pyyaml
 
 ## Suporte e licença
 - Use Issues e Pull Requests para discutir melhorias e reportar problemas.
-- Licença: MIT (ajuste conforme sua preferência).
+- Licença: MIT
 
 ## Créditos e motivação
 Este repositório consolida a Máquina TESA, integrando módulos locais/globais com auditoria de constantes e relatórios automatizados. O objetivo é oferecer uma base reprodutível e extensível para validações das formas de Vojta/Lang, Szpiro/ABC e aplicações relacionadas em Arakelov e teoria de alturas.
