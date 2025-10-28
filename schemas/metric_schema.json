@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Admissible metrics and positive Green profiles",
+  "type": "object",
+  "required": ["metrics"],
+  "properties": {
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "params"],
+        "properties": {
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "params": {
+            "type": "object",
+            "properties": {
+              "norm_C0": {"type": "number", "minimum": 0},
+              "norm_C1": {"type": "number", "minimum": 0},
+              "norm_C2": {"type": "number", "minimum": 0},
+              "epsilon_grid": {
+                "type": "array",
+                "items": {"type": "number", "exclusiveMinimum": 0}
+              }
+            },
+            "additionalProperties": true
+          },
+          "assumptions": {"type": "string"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Type schema (E_n/D_n)",
+  "type": "object",
+  "required": ["types"],
+  "properties": {
+    "types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "class", "vertices", "edges", "weights", "rho"],
+        "properties": {
+          "id": {"type": "string"},
+          "class": {"type": "string", "enum": ["E", "D", "mixed"]},
+          "n": {"type": "integer", "minimum": 1},
+          "vertices": {"type": "array", "items": {"type": "string"}},
+          "edges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["u", "v", "conductance"],
+              "properties": {
+                "u": {"type": "string"},
+                "v": {"type": "string"},
+                "conductance": {"type": "number", "minimum": 0}
+              }
+            }
+          },
+          "weights": {
+            "type": "object",
+            "description": "Stationary weights or vertex measures",
+            "additionalProperties": {"type": "number", "minimum": 0}
+          },
+          "rho": {"type": "number", "exclusiveMinimum": 0},
+          "metadata": {"type": "object"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+Arquivo: data/types/En_Dn_library.yaml
+--------------------------------
+types:
+  - id: E_4_demo
+    class: E
+    n: 4
+    vertices: ["v1", "v2", "v3", "v4"]
+    edges:
+      - {u: "v1", v: "v2", conductance: 1.0}
+      - {u: "v2", v: "v3", conductance: 1.0}
+      - {u: "v3", v: "v4", conductance: 1.0}
+      - {u: "v4", v: "v1", conductance: 1.0}
+    weights: {"v1": 1.0, "v2": 1.0, "v3": 1.0, "v4": 1.0}
+    rho: 1.0
+    metadata: {note: "Ciclo de 4 como exemplo simples"}
+
+  - id: D_5_demo
+    class: D
+    n: 5
+    vertices: ["a", "b", "c", "d", "e"]
+    edges:
+      - {u: "a", v: "b", conductance: 2.0}
+      - {u: "b", v: "c", conductance: 2.0}
+      - {u: "c", v: "d", conductance: 2.0}
+      - {u: "d", v: "e", conductance: 2.0}
+    weights: {"a": 1.0, "b": 1.0, "c": 1.0, "d": 1.0, "e": 1.0}
+    rho: 0.8
+    metadata: {note: "Caminho de 5 como exemplo"}

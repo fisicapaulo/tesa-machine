@@ -1,0 +1,20 @@
+name: tesa-machine
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - pandas
+  - networkx
+  - matplotlib
+  - pyyaml
+  - ruamel.yaml
+  - jinja2
+  - tqdm
+  - ipykernel
+  - nbconvert
+  - pip
+  - pip:
+      - pybind11
+      - pystan==3.7.0
